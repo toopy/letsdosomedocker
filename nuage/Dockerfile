@@ -1,11 +1,12 @@
-FROM toopy/django-1.6.7
+FROM toopy/python
 MAINTAINER Florent Pigout florent@toopy.org
 
-RUN mkdir -p /var/toopy/src
+RUN pip3 install psycopg2
 
-RUN git clone https://github.com/open-nuage/django-nuage-server.git /var/toopy/src/django-nuage-server
+RUN mkdir -p /var/toopy/src; cd /var/toopy/src; git clone https://github.com/open-nuage/django-nuage-server.git
 
-ADD files/settings_local.py /var/toopy/src/django-nuage-server/
+ADD files/settings_local.py       /var/toopy/src/django-nuage-server/
+ADD files/settings_tests_local.py /var/toopy/src/django-nuage-server/
+
 ADD files/run.sh /var/toopy/bin/
-
 CMD /var/toopy/bin/run.sh
