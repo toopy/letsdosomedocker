@@ -1,7 +1,18 @@
 #!/bin/bash
+cd ${HOME}
+source .bashrc
 
 PORT=${PORT:-"8000"}
 BRANCH=${BRANCH:-"develop"}
+
+echo "[run] init virtualenv"
+mkvirtualenv nuage
+workon nuage
+
+BIN=${HOME}/.virtualenvs/nuage/bin
+
+echo "[install psycopg2]"
+${BIN}/pip3 install psycopg2
 
 echo "[run] go to the app folder"
 cd /var/toopy/src/django-nuage-server
