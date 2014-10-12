@@ -53,7 +53,8 @@ TODO
 Run Graphical container
 -----------------------
 
-$ bin/docker build -t toopy/idea:latest idea/
+$ bin/docker build -t toopy/java:latest java
+$ bin/docker build -t toopy/idea:latest idea
 
 $ export XSOCK=/tmp/.X11-unix
 $ export XAUTH=/tmp/.docker.xauth
