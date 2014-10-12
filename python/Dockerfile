@@ -1,8 +1,7 @@
 FROM debian:latest
 MAINTAINER Florent Pigout "florent@toopy.org"
 
-RUN apt-get update
-RUN apt-get upgrade -y
+RUN apt-get update; apt-get upgrade -y
 
 RUN apt-get install -y gcc git libssl-dev libpq-dev make openssl wget zip zlib1g-dev
 
