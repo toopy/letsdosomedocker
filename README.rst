@@ -17,8 +17,8 @@ $ sudo bin/docker -d -b br0
 Get some images
 ---------------
 
-$ bin/docker pull debian
-$ bin/docker pull paintedfox/postgresql
+$ bin/docker pull debian:latest
+$ bin/docker pull paintedfox/postgresql:latest
 $ bin/docker pull jenkins:latest
 
 Build cutom base images
