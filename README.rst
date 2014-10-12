@@ -24,13 +24,13 @@ $ bin/docker pull jenkins:latest
 Build cutom base images
 -----------------------
 
-$ bin/docker build -t toopy/django django/
-$ bin/docker build -t toopy/postgresql postgresql/
+$ bin/docker build -t toopy/python python
+$ bin/docker build -t toopy/postgresql postgresql
 
 Build cutom django image
 ------------------------
 
-$ bin/docker build -t toopy/nuage nuage/
+$ bin/docker build -t toopy/nuage nuage
 
 Run nuage linked container
 --------------------------
