@@ -1,12 +1,9 @@
-FROM debian:latest
+FROM toopy/java:latest
+MAINTAINER Florent Pigout "florent@toopy.org"
 
-RUN apt-get update; apt-get upgrade -y
-RUN apt-get install -y curl git libxext-dev libxrender-dev libxtst-dev maven openjdk-7-jdk unzip vim wget xorg x11-apps
-
-RUN mkdir -p /var/toopy/tools
-RUN cd /var/toopy/tools; wget http://download-cf.jetbrains.com/idea/ideaIC-13.1.5.tar.gz; tar xvf ideaIC-13.1.5.tar.gz
-RUN rm /var/toopy/tools/ideaIC-13.1.5.tar.gz; mv /var/toopy/tools/idea-IC-135.1289 /var/toopy/tools/idea
-
+RUN mkdir -p /home/toopy/tools
+RUN cd /home/toopy/tools; wget http://download-cf.jetbrains.com/idea/ideaIC-13.1.5.tar.gz; tar xvf ideaIC-13.1.5.tar.gz
+RUN rm /home/toopy/tools/ideaIC-13.1.5.tar.gz; mv /home/toopy/tools/idea-IC-135.1289 /home/toopy/tools/idea
 RUN mkdir -p /var/toopy/bin
 RUN wget https://get.docker.io/builds/Linux/x86_64/docker-latest -O bin/docker; chmod +x /var/toopy/bin/docker
 RUN useradd docker; groupadd docker; gpasswd -a docker docker
