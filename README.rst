@@ -38,15 +38,17 @@ $ export BRANCH=master
 $ bin/docker run -d --name "pg.${BUILD_NUMBER}" -e USER="nuage" -e PASS="nuage" -e DB="nuage" toopy/postgresql
 $ bin/docker run -it --name "nuage.${BUILD_NUMBER}" -p 8000:8000 --link pg.${BUILD_NUMBER}:db -e BRANCH="${BRANCH}" -e RUN="test" toopy/nuage
 
+Commit and Push
+---------------
+
+TODO
+
 Test nuage with jenkins
 -----------------------
 
 TODO
 
-Commit and Push
----------------
 
-TODO
 
 Run Graphical container
 -----------------------
