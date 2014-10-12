@@ -1,7 +1,6 @@
 FROM toopy/python
 MAINTAINER Florent Pigout florent@toopy.org
 
-RUN pip3 install psycopg2
 
 RUN mkdir -p /var/toopy/src; cd /var/toopy/src; git clone https://github.com/open-nuage/django-nuage-server.git
 
