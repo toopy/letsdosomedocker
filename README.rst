@@ -33,10 +33,10 @@ $ bin/docker build -t toopy/nuage nuage
 Run nuage linked container
 --------------------------
 
-$ export BUILD_NAME=default
+$ export BUILD_NUMBER=default
 $ export BRANCH=master
-$ bin/docker run -d --name "pg.${BUILD_NAME}" -e USER="nuage" -e PASS="nuage" -e DB="nuage" toopy/postgresql
-$ bin/docker run -it --name "nuage.${BUILD_NAME}" -p 8000:8000 --link pg.${BUILD_NAME}:db -e BRANCH="${BRANCH}" -e RUN="test" toopy/nuage
+$ bin/docker run -d --name "pg.${BUILD_NUMBER}" -e USER="nuage" -e PASS="nuage" -e DB="nuage" toopy/postgresql
+$ bin/docker run -it --name "nuage.${BUILD_NUMBER}" -p 8000:8000 --link pg.${BUILD_NUMBER}:db -e BRANCH="${BRANCH}" -e RUN="test" toopy/nuage
 
 Test nuage with jenkins
 -----------------------
