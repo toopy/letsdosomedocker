@@ -101,4 +101,3 @@ $ bin/docker rm -f nuage.1 nuage.2 pg.1 pg.2
 $ bin/docker rmi toopy/nuage
 $ bin/docker commit <container_id> toopy/nuage
 $ bin/docker tag <image_id> toopy/nuage
-
