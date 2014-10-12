@@ -46,9 +46,41 @@ TODO
 Test nuage with jenkins
 -----------------------
 
-TODO
+$ sudo gpasswd -a jenkins docker
 
+Command to execute
+^^^^^^^^^^^^^^^^^^
 
+.. code-block:: python
+
+    echo "[docker] run  pg.${BUILD_NUMBER}"
+    ${JENKINS_HOME}/bin/docker run -d --name "pg.${BUILD_NUMBER}" \
+    -e USER="nuage" -e PASS="nuage" -e DB="nuage" \
+    toopy/postgresql
+
+    echo "[docker] run  nuage.${BUILD_NUMBER}"
+    ${JENKINS_HOME}/bin/docker run -i --name "nuage.${BUILD_NUMBER}" \
+    -p 8000:8000 --link pg.${BUILD_NUMBER}:db \
+    -e BRANCH="${BRANCH}" -e RUN="test" \
+    toopy/nuage
+
+Post build task
+^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    echo "[docker] rm  pg.${BUILD_NUMBER}"
+    ${JENKINS_HOME}/bin/docker rm -f pg.${BUILD_NUMBER}
+
+    echo "[docker] rm nuage.${BUILD_NUMBER}"
+    ${JENKINS_HOME}/bin/docker rm -f nuage.${BUILD_NUMBER}
+
+Post build task if succeed
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    TODO
 
 Run Graphical container
 -----------------------
