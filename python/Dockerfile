@@ -26,8 +26,6 @@ RUN mkdir -p /home/toopy; chown toopy:toopy /home/toopy
 USER toopy
 
 # setup virtualenvwrapper
-ENV WORKON_HOME /home/toopy/.virtualenvs
-ENV VIRTUALENVWRAPPER_HOOK_DIR /home/toopy/.virtualenvs
 RUN cd /home/toopy; echo "\
 export WORKON_HOME=$HOME/.virtualenvs\n
 export VIRTUALENVWRAPPER_HOOK_DIR=$HOME/.virtualenvs\n
