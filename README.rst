@@ -4,7 +4,6 @@ Install
 $ wget https://get.docker.io/builds/Linux/x86_64/docker-latest -O bin/docker
 $ chmod +x bin/docker
 
-$ sudo useradd docker
 $ sudo groupadd docker
 $ sudo gpasswd -a ${USER} docker
 
@@ -19,7 +18,6 @@ Get some images
 
 $ bin/docker pull debian:latest
 $ bin/docker pull paintedfox/postgresql:latest
-$ bin/docker pull jenkins:latest
 
 Build cutom base images
 -----------------------
@@ -61,13 +59,6 @@ $ export XAUTH=/tmp/.docker.xauth
 $ touch $XAUTH
 $ xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 $ bin/docker run --name idea -it -p 8080:8080 -v $XSOCK:$XSOCK:rw -v $XAUTH:$XAUTH:rw -e DISPLAY=$DISPLAY -e XAUTHORITY=$XAUTH toopy/idea:latest
-
-Nsenter
--------
-
-$ bin/docker run --rm jpetazzo/nsenter cat /nsenter > /tmp/nsenter && chmod +x /tmp/nsenter
-$ PID=$(docker inspect --format {{.State.Pid}} idea)
-
 
 Additional command
 ------------------
