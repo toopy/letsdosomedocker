@@ -26,8 +26,8 @@ Build cutom base images
 $ docker build -t toopy/python:3.4 python3
 $ docker build -t toopy/postgresql postgresql
 
-Build cutom django image
-------------------------
+Build cutom python images
+-------------------------
 
 $ docker build -t toopy/nuage nuage
 
