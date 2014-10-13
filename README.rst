@@ -46,7 +46,16 @@ $ docker run -it --name "nuage.${BUILD_NUMBER}" \
 Commit and Push
 ---------------
 
-TODO
+Run a registry
+^^^^^^^^^^^^^^
+
+$ docker run -p 5000:5000 registry
+
+Tag and push and image
+^^^^^^^^^^^^^^^^^^^^^^
+
+$ docker tag toopy/python:3.4 127.0.0.1:5000/toopy/python:3.4
+$ docker push 127.0.0.1:5000/toopy/python:3.4
 
 Test nuage with jenkins
 -----------------------
