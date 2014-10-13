@@ -24,6 +24,7 @@ Build cutom base images
 -----------------------
 
 $ docker build -t toopy/python:3.4 python3
+$ docker build -t toopy/python:2.7 python2
 $ docker build -t toopy/postgresql postgresql
 
 Build cutom python images
