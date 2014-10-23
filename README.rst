@@ -5,7 +5,7 @@ Install
 
     $ wget https://get.docker.io/builds/Linux/x86_64/docker-latest -O bin/docker
     $ chmod +x bin/docker
-    $ sudo cp `pwd`/bin/docker /usr/local/bin
+    $ sudo cp bin/docker /usr/local/bin
 
     $ sudo groupadd docker
     $ sudo gpasswd -a ${USER} docker
