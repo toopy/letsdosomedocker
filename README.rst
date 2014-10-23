@@ -54,6 +54,8 @@ Run nuage linked container
     $ docker run -it --name "nuage.${BUILD_NUMBER}" \
     -p 8000:8000 --link pg.${BUILD_NUMBER}:db -e RUN="test" toopy/${PROJECT}
 
+    $ docker start -i nuage.${BUILD_NUMBER}
+
 Commit and Push
 ---------------
 
