@@ -27,7 +27,7 @@ USER toopy
 
 # setup virtualenvwrapper
 RUN cd /home/toopy; echo "\
-export WORKON_HOME=$HOME/.virtualenvs\n
-export VIRTUALENVWRAPPER_HOOK_DIR=$HOME/.virtualenvs\n
+export WORKON_HOME=$HOME/.virtualenvs\n\
+export VIRTUALENVWRAPPER_HOOK_DIR=$HOME/.virtualenvs\n\
 source /usr/local/bin/virtualenvwrapper.sh\
 " > .bashrc
