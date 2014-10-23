@@ -1,4 +1,4 @@
-FROM toopy/python
+FROM toopy/python:3.4
 MAINTAINER Florent Pigout florent@toopy.org
 
 RUN cd /home/toopy; mkdir src; mkdir bin
