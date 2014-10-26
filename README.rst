@@ -1,3 +1,10 @@
+Slides
+------
+
+The slides can be viewed `here`_.
+
+.. _here: https://toopy.github.io/letsdosomedocker/
+
 Install
 -------
 
