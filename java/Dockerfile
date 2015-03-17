@@ -1,10 +1,8 @@
 FROM debian:latest
 MAINTAINER Florent Pigout "florent@toopy.org"
 
-ENV JAVA_VERSION 7u65
-
 RUN apt-get update; apt-get upgrade -y
-RUN apt-get install -y curl git openjdk-7-jdk="$JAVA_VERSION"* unzip vim wget
+RUN apt-get install -y curl git openjdk-7-jdk unzip vim wget
 
 # set root password for user switching
 RUN echo 'root:toor' | chpasswd
